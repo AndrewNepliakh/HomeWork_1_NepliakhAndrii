@@ -487,7 +487,6 @@ GameObject:
   - component: {fileID: 592670364}
   - component: {fileID: 592670363}
   - component: {fileID: 592670367}
-  - component: {fileID: 592670366}
   m_Layer: 0
   m_Name: Cube_cube
   m_TagString: Untagged
@@ -560,33 +559,6 @@ Transform:
   m_Father: {fileID: 2064244715}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &592670366
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592670361}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!65 &592670367
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1360,6 +1332,7 @@ GameObject:
   - component: {fileID: 2064244715}
   - component: {fileID: 2064244716}
   - component: {fileID: 2064244717}
+  - component: {fileID: 2064244718}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1407,5 +1380,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6078c33dbdfdd834da4e7360f00993af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  rigidbody: {fileID: 592670366}
+  _speed: 3
+  _rigidbody: {fileID: 2064244718}
+--- !u!54 &2064244718
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064244714}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0

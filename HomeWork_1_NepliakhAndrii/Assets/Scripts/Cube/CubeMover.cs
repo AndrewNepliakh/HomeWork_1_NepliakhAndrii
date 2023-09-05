@@ -2,33 +2,58 @@ using UnityEngine;
 
 public class CubeMover : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private Rigidbody rigidbody;
+    [SerializeField] private float _speed;
+    [SerializeField] private Rigidbody _rigidbody;
+
+    private KeyCode _keyCode;
     
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         Move();
     }
 
-    private void Move()
+    private void Update()
     {
-        Vector3 velocity = Vector3.zero; 
-        
+        ReadKey();
+    }
+    
+    private void ReadKey()
+    {
         if (Input.GetKey(KeyCode.W))
         {
-            rigidbody.velocity += Vector3.forward * speed;
+            _keyCode = KeyCode.W;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            rigidbody.velocity += Vector3.back * speed;
+            _keyCode = KeyCode.S;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            rigidbody.velocity += Vector3.left * speed;
+            _keyCode = KeyCode.A;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            rigidbody.velocity += Vector3.right * speed;
+            _keyCode = KeyCode.D;
+        }
+    }
+
+    private void Move()
+    {
+        if (_keyCode == KeyCode.W)
+        {
+            _rigidbody.velocity += Vector3.forward * _speed;
+        }
+        if (_keyCode == KeyCode.S)
+        {
+            _rigidbody.velocity += Vector3.back * _speed;
+        }
+        if (_keyCode == KeyCode.A)
+        {
+            _rigidbody.velocity += Vector3.left * _speed;
+        }
+        if (_keyCode == KeyCode.D)
+        {
+            _rigidbody.velocity += Vector3.right * _speed;
         }
     }
 }
